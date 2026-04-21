@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadania JavaScript</title>
+</head>
+<body>
+
+    <div id="kontener">Jan Kowalski</div>
+
+    <p class="wyroznione">Radom</p>
+
+    <input type="text" id="artykul">
+    <div id="liczba"></div>
+
+    <script>
+        // ZADANIE 1
+        const kontener = document.getElementById('kontener');
+
+        kontener.addEventListener('click', function() {
+            this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        });
+
+        kontener.addEventListener('mouseenter', function() {
+            this.style.fontSize = "28px";
+        });
+
+        kontener.addEventListener('mouseleave', function() {
+            this.style.fontSize = "14px";
+        });
+
+        // ZADANIE 2
+        const paragraf = document.querySelector('.wyroznione');
+
+        paragraf.addEventListener('dblclick', function() {
+            this.textContent = "Powiat radomski";
+        });
+
+        paragraf.addEventListener('mouseenter', function() {
+            console.log(this.textContent);
+        });
+
+        // ZADANIE 3
+        const artykul = document.getElementById('artykul');
+        const divLiczba = document.getElementById('liczba');
+
+        artykul.addEventListener('keydown', function(event) {
+            this.style.width = (this.offsetWidth + 1) + "px";
+
+            if (event.key >= '0' && event.key <= '9') {
+                divLiczba.textContent += event.key;
+            }
+        });
+    </script>
+</body>
+</html>
+</html>
